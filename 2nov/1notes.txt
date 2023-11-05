@@ -1,0 +1,100 @@
+Introduction to Javascript:
+
+Javascript is a scripting language which is used to develop dynamic web pages.
+
+Initially, Javascript was developed only to support client side (front end) applications but later they supported for server side (back end) applications also.
+
+
+Areas where Js can be used:
+
+1. Client side apps
+2.Server side apps
+3.BlockChain
+4. IOT- Internet of Things
+
+
+Frist JS example:
+
+<html>
+    <head>
+        <title>Javascript Demo</title>
+
+        <script>
+
+
+        </script>
+
+    
+    </head>
+
+
+    <body>
+        
+        <h1>hello</h1>
+
+        <script>
+            alert("hello");
+
+        </script>
+
+
+
+    </body>
+
+
+</html>
+
+<!--
+    html render the UI
+
+    Application: A set of code  that takes and input, process it and provide some output.
+
+-->
+
+ Script language usage is use less code and achieve more functionality.
+
+
+ Variables: Variable is an identifier which refer/ stores some value.
+
+ syntax: var var_name=value
+
+ <input type="text" id="email" placeholder=" Enter email">
+ input is called element and type, id, placeholder, name are all attributes.
+
+ <html>
+    <head>
+
+    </head>
+
+    <body>
+        
+                <input type="text" id="email" placeholder=" Enter email">
+                <input type="password" id="password" placeholder="Enter password">
+                <button onclick="login()">Login</button>
+        <script>
+                
+
+                    //var a=100;
+                    //var b=200;
+                    //console.log(a);
+                    //console.log(b);
+                    function login(){
+
+
+                        //console.log(document.getelmenetById("email").value);
+
+                        var email= document.getElementById("email").value;
+                        //console.log(email);
+
+                         if(email.includes("@gmail.com")){
+
+                         }
+
+                         else{
+                            alert("Invalid email format");
+                         }
+
+                    }
+        </script>
+    </body>
+</html>
