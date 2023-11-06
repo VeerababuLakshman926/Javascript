@@ -1,0 +1,157 @@
+Variable:
+
+syntax: var var_name=value;
+
+In JS, we have two types of Variables,
+
+1.Local variables:
+reference: 2.localvariable.html
+
+If any variable created inside the function, then it is considered as local variable.
+
+It is called local because the scope of the variable is local to that function.
+
+<html>
+
+<head>
+
+
+</head>
+
+    <body>
+        
+        <script>
+
+            function f1(){
+                a=100; //localvariable
+                b=200; //localvariable
+
+                console.log(a);
+                console.log(b);
+            }
+
+            function f2(){
+                a=500;
+                console.log(a);
+            }
+
+            f1();
+            f2(); 
+        </script>
+    </body>
+</html>
+
+The visibility of the local variable is always with in the function.
+
+
+2. Global variables:
+reference:3.globalvariable.html
+
+If we create any variable outside of the fucntion, then it will be considered as global varible.
+
+<html>
+    <head>
+        <title>     </title>
+    </head>
+
+    <body>
+        
+        <script>
+            
+            var a=100;  //Global variable
+            var b=200;  //Global variable
+
+            function f1(){
+                console.log(a);
+            }
+
+            function f2(){
+                console.log(b);
+
+            }
+
+            f1();
+            f2();
+
+        </script>
+    </body>
+</html>
+
+Priority is for Loacal variable
+
+Reference: 4.priority.html
+<script>
+            
+            var a=100;  //Global variable
+            var b=200;  //Global variable
+
+            function f1(){
+                var a=10;
+                console.log(a);
+            }
+
+            function f2(){
+                var b=20;
+                console.log(b);
+
+            }
+
+            f1();
+            f2();
+
+</script>
+
+
+Problem statement-1: 5.PS liking feature.html
+
+Implement like feature of youtube:
+
+Algorithm:
+
+1.Create the like icon.
+
+2. Make the icon clickable.
+
+3. Create a counter variable(global)
+
+4. increment the counter each time the icon is clicked
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+
+    <body>
+        <i onclick="incrementlikes()" class="fa fa-thumbs-up" style="font-size: 60px;"></i>
+
+        <span id="likescount" style="font-size: 50px">0</span>
+
+        <script>
+            
+            var likes=0
+            function incrementlikes(){
+                likes++;
+                document.getElementById("likescount").innerText=likes;
+
+            }
+
+        </script>
+
+
+    </body>
+</html>
+
+
+problem statement-2: Implement like and dislike feature of instagram post.
+reference: 6.PS instaliking.html
+
+
+Variable Hoisting:
+
+It is a default process followed by Javascript runtime engine before execution of  the code.
+
+VH is the process of taking the variable declaration to the top of the file (if it is global varibale) and top of the function (if it is local variable).
+
+
+see reference: 7.variabelhoisting.html

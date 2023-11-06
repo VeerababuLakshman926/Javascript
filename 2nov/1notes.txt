@@ -56,7 +56,7 @@ Frist JS example:
 
  Variables: Variable is an identifier which refer/ stores some value.
 
- syntax: var var_name=value
+ syntax: var var_name=value;
 
  <input type="text" id="email" placeholder=" Enter email">
  input is called element and type, id, placeholder, name are all attributes.
