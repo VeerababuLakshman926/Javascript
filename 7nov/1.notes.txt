@@ -1,0 +1,162 @@
+Objects:
+
+An object is a collection of key-value pair.
+
+Syntax;
+
+var object = {
+    key : value,
+    key : value,
+    .
+    .
+    .
+    key : value
+}
+
+Example: refer 2.employeeobj.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    
+</head>
+<body>
+            <script>
+                        var employee = {
+                            name: "Lakshman",
+                            address: {
+                                hno: "2894/134",
+                                street: "maruthinagar",
+                                city: "Hyderabad",
+                                state: "Telangana",
+                            },
+                            projects:[
+                                {
+                                    name: "CRM",
+                                    client: "XYZ"
+                                },
+                                {
+                                    name: "E-learning",
+                                    client: "KCPD"
+                                }
+                            ],
+                            languages: ["Telugu", "Hindi", "English"],
+                            eid: 198,
+                            isMarried: true
+
+                        }
+                        console.log(employee);
+
+                        console.log(employee.previouscompany); //if the key previous company is not there in the object then it will show as undefined.
+                        
+                        employee.previouscompany = "TCS"; //if we want to insert new key as previouscompany into the object employee.
+                        
+                        console.log(employee.previouscompany);
+                        
+                        console.log(employee.isMarried); //console :true
+                        
+                        employee.isMarried = false;  //If we want to modify the data in the object without editing in the object.
+
+                        console.log(employee.isMarried); //console: false
+                        
+                        delete employee.eid; //It will delete the eid in employee object.
+
+                        console.log(employee);
+
+                        console.log(employee.projects[1].client); //reference starts from 0,1
+
+                        console.log(employee.languages);
+
+                        
+                        
+            </script>
+    
+</body>
+</html>
+
+
+Problem statement:
+
+Create product add page and display the details of the product on the UI.
+
+<html>
+<head>
+    
+    
+</head>
+<body>
+    
+    <input type="text" id="name" placeholder="enter name"><br><br>
+    <input type="number" id="price" placeholder="enter price"><br><br><br>
+    <input type="text" id="brand" placeholder="enter brand"><br><br><br>
+    <input type="text" id="imageURL" placeholder="enter imageURL"><br><br><br>
+    <button onclick="addProduct()">Add product</button>
+
+    <img id="image">
+    <h3 id="nameofproduct"></h3>
+    <h3 id="priceofproduct"></h3>
+    <h3 id="brandofproduct"></h3>
+
+
+    <script>
+
+        function addProduct(){
+
+            var name = document.getElementById("name").value;
+            var price = document.getElementById("price").value;
+            var brand = document.getElementById("brand").value;
+            var imageURL = document.getElementById("imageURL").value;
+
+            var product = {
+                name : name,
+                price : price,
+                brand : brand,
+                imageURL : imageURL
+            }
+            // send it to the database above object.
+
+            document.getElementById("image").src=product.imageURL;
+            document.getElementById("nameofproduct").innerText=product.name;
+            document.getElementById("priceofproduct").innerText=product.price;
+            document.getElementById("brandofproduct").innerText=product.brand;
+
+        }
+                   
+    </script>
+    
+</body>
+</html>
+
+
+Operators and Control statements:
+
+Operators:
+
+An Operator is a symbol / keyword that provide some functionality.
+
+examples: +, typeof, instanceof, - , > , .....
+
+Arithmetic Operators: + ,- , * , %(remainder) , /(quotient) , ++(increment) , --(decrement)
+
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <script>
+
+            var a=10, b=20, c="30", d="10s";
+
+            console.log(a+b+c); //3030
+            console.log(a+c+b); //103020
+            console.log(c+b+a); //302010 starting c is string so it will concat the next variables also
+            console.log(a - c); //-20 here '-' has no any concatination. so it will convert the string c into a number i.e, 30 and the output will be 10-30=-20
+            console.log(a-d); //here d cant be converted into a number because there is 's'. so it will give output as NaN(NOT a NUMBER).
+        </script>
+    </body>
+</html>
+
+
+Comparison operators:

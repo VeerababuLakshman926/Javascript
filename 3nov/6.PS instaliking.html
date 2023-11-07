@@ -4,20 +4,22 @@
 
     </head>
     <body>
-        <span id="love1"><i onclick="like()" class="fa fa-heart-o" style="font-size: 48px;"></i></span>
+        <i id="love1" onclick="like()" class="fa fa-heart-o" style="font-size: 48px;"></i>
+        
         
         
 
         <script>
             
-
             function like(){
-                var a = <i id="love2" class="fa fa-heart" style="font-size:48px;color:red"></i>;
-                document.getElementById("love1")=a;
-    
+                <i id="love2" class="fa fa-heart" style="font-size:48px; color:red"></i>
+                document.getElementById("love1").value=document.getElementById("love2").value;
+
+               
+
             }
 
-            like();
+
         </script>
 
         

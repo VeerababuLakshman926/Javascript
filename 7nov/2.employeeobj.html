@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    
+</head>
+<body>
+            <script>
+                        var employee = {
+                            name: "Lakshman",
+                            address: {
+                                hno: "2894/134",
+                                street: "maruthinagar",
+                                city: "Hyderabad",
+                                state: "Telangana",
+                            },
+                            projects:[
+                                {
+                                    name: "CRM",
+                                    client: "XYZ"
+                                },
+                                {
+                                    name: "E-learning",
+                                    client: "KCPD"
+                                }
+                            ],
+                            languages: ["Telugu", "Hindi", "English"],
+                            eid: 198,
+                            isMarried: true
+
+                        }
+                        console.log(employee);
+
+                        console.log(employee.previouscompany); //if the key previous company is not there in the object then it will show as undefined.
+                        
+                        employee.previouscompany = "TCS"; //if we want to insert new key as previouscompany into the object employee.
+                        
+                        console.log(employee.previouscompany);
+                        
+                        console.log(employee.isMarried); //console :true
+                        
+                        employee.isMarried = false;  //If we want to modify the data in the object without editing in the object.
+
+                        console.log(employee.isMarried); //console: false
+                        
+                        delete employee.eid; //It will delete the eid in employee object.
+
+                        console.log(employee);
+
+                        console.log(employee.projects[1].client); //reference starts from 0,1
+
+                        console.log(employee.languages);
+
+                        
+                        
+            </script>
+    
+</body>
+</html>

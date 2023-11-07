@@ -1,0 +1,18 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <script>
+
+            var a=10, b=20, c="30", d="10s";
+
+            console.log(a+b+c); //3030
+            console.log(a+c+b); //103020
+            console.log(c+b+a); //302010 starting c is string so it will concat the next variables also
+            console.log(a - c); //-20 here '-' has no any concatination. so it will convert the string c into a number i.e, 30 and the output will be 10-30=-20
+            console.log(a-d); //here d cant be converted into a number because there is 's'. so it will give output as NaN(NOT a NUMBER).
+        </script>
+    </body>
+</html>
