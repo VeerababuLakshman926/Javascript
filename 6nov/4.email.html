@@ -1,0 +1,37 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="text" id="email" placeholder="enter email"> 
+        <button onclick="next()">Next</button>
+
+                <script>
+            
+                        function next(){
+                            var email=document.getElementById("email").value;
+                            console.log(email);
+                            console.log(email.length);
+                            //In Javascript string are immutable. So, we have to reassing it, to modify
+                            email=email.trim();  //trim is used to remove spaces from front and back of the string
+                            console.log(email);
+                            console.log(email.length);
+                            email=email.toLowerCase();   //converts uppercase to lowercase
+                            console.log(email);
+                            
+                            if(email.includes("@gmail.com")){
+
+                            }
+                            else{
+                                email=email.concat("@gmail.com")
+                            }
+                            console.log(email); //add @gmail.com
+                            
+                            
+
+                        }
+
+            
+                </script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+
+        <input type="text"j id="username" placeholder="enter username">
+        <input type="password" id="password" placeholder="password">
+        <button onclick="login()">Login</button>
+
+            <script>
+                        function login(){
+                            var username=document.getElementById("username").value;
+                            var password=document.getElementById("password").value;
+                            //console.log(username);
+                            //console.log(password);
+
+                            if(username.includes(" ")){
+                                alert("username contains space");
+                                return;
+                            }
+
+                            if(username.length==0){
+                                alert("username is required");
+                                return;
+                            }
+
+                            if(password.length==0){
+                                alert("password is required");
+                                return;
+                            }
+
+                            if(username=="veerababu" && password=="nani"){
+                                alert("Login success");
+                            }
+
+                            else{
+                                alert("Login failed");
+                            }
+
+                        }
+
+            </script>
+    </body>
+</html>

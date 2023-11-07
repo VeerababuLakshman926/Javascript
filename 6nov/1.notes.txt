@@ -1,0 +1,230 @@
+Data types:
+
+Javascript provides two types of data types.
+
+1.Primitive types:
+
+Number, string, boolean
+
+refer 2.primitive,html
+
+<html>
+    <head>
+
+    </head>
+    <body>
+
+                <script>
+                            //Primitive types
+
+                            //Number
+
+                            var age=21;
+                            var rating=3.14;
+
+                            console.log(age);
+                            console.log(rating);
+                            console.log(typeof age);
+                            console.log(typeof rating);
+
+                            //boolean: true or false
+                            var isdone=false;
+                            console.log(isdone);
+                            console.log(typeof isdone);
+                            isdone=1;
+                            console.log(isdone);
+                            console.log(typeof isdone);
+
+                            //string: collection of characters
+
+                            //string syntax
+
+                            var username="lakshman";
+                            var password='nani';
+                            console.log(username);
+                            console.log(password);
+                            console.log(typeof username);
+                            console.log(typeof password);
+                            
+                            //In Javascript, strings are immutable, once we create a string, it cannot be modified
+                            //But we can reassign a value to it.
+                            var firstname='Lakshman';
+                            var lastname='Veerababu';
+                            firstname.concat(lastname); //"Lakshman Veerababu"
+                            console.log(firstname); //Lakshman
+
+                            firstname=firstname.concat(lastname);
+                            console.log(firstname);
+                            
+
+
+                </script>
+    </body>
+
+
+</html>
+
+Problem statement: 
+
+Implement a simple login system using javascript.
+
+Refer 3.PS login.html
+
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+
+        <input type="text"j id="username" placeholder="enter username">
+        <input type="password" id="password" placeholder="password">
+        <button onclick="login()">Login</button>
+
+            <script>
+                        function login(){
+                            var username=document.getElementById("username").value;
+                            var password=document.getElementById("password").value;
+                            //console.log(username);
+                            //console.log(password);
+
+                            if(username.includes(" ")){
+                                alert("username contains space");
+                                return;
+                            }
+
+                            if(username.length==0){
+                                alert("username is required");
+                                return;
+                            }
+
+                            if(password.length==0){
+                                alert("password is required");
+                                return;
+                            }
+
+                            if(username=="veerababu" && password=="nani"){
+                                alert("Login success");
+                            }
+
+                            else{
+                                alert("Login failed");
+                            }
+
+                        }
+
+            </script>
+    </body>
+</html>
+
+PS:Email correction
+
+refer: 4.email.html
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="text" id="email" placeholder="enter email"> 
+        <button onclick="next()">Next</button>
+
+                <script>
+            
+                        function next(){
+                            var email=document.getElementById("email").value;
+                            console.log(email);
+                            console.log(email.length);
+                            //In Javascript string are immutable. So, we have to reassing it, to modify
+                            email=email.trim();  //trim is used to remove spaces from front and back of the string
+                            console.log(email);
+                            console.log(email.length);
+                            email=email.toLowerCase();   //converts uppercase to lowercase
+                            console.log(email);
+                            
+                            if(email.includes("@gmail.com")){
+
+                            }
+                            else{
+                                email=email.concat("@gmail.com")
+                            }
+                            console.log(email); //add @gmail.com
+                            
+                            
+
+                        }
+
+            
+                </script>
+    </body>
+</html>
+
+
+
+2.Referenced / Advanced / Non primitive types
+
+Arrays and objects
+
+Arrays:
+
+An array is linear data structure which is used to  store data in a sequential  order.
+
+syntax:
+
+var arr_name =[];
+
+var username=["veerababu", "lakshman", "nani"];
+
+In JS, Arrays can store different types of values.
+
+        var arr=[1,2,3,4,'abc',true];
+        console.log(arr);
+
+JS provides lot of predefined functions to work with arrays.
+
+                    var arr=[];
+                    console.log(arr);
+                    arr.push(101); //add elements at the end the array
+                    arr.push(102);
+                    console.log(arr);
+                    arr.unshift(100); // add element at the start of array
+                    console.log(arr);
+
+
+arrays example: username availability 
+
+refer:6.usernameavailability.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+
+    <input type="text" id="username" placeholder="enter username" onkeyup ="validate()"><span id="msg"></span>
+    
+        <script>
+                   var users=['nani', 'veerababu', 'Lakshman', 'Jaan'];
+
+                   function validate(){
+
+                    var username = document.getElementById("username").value;
+
+                    if(users.includes(username)){
+                        document.getElementById("msg").innerText="This user name is already taken";
+                        document.getElementById("msg").style.color = "red";
+                    }
+                    else{
+                        document.getElementById("msg").innerText="This user name is available";
+                        document.getElementById("msg").style.color = "green";
+                    }
+
+                   }
+                   
+
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+
+    <input type="text" id="username" placeholder="enter username" onkeyup ="validate()"><span id="msg"></span>
+    
+        <script>
+                   var users=['nani', 'veerababu', 'Lakshman', 'Jaan'];
+
+                   function validate(){
+
+                    var username = document.getElementById("username").value;
+
+                    if(users.includes(username)){
+                        document.getElementById("msg").innerText="This user name is already taken";
+                        document.getElementById("msg").style.color = "red";
+                    }
+                    else{
+                        document.getElementById("msg").innerText="This user name is available";
+                        document.getElementById("msg").style.color = "green";
+                    }
+
+                   }
+                   
+
+
+        </script>
+</body>
+</html>
