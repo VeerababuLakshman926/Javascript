@@ -160,3 +160,89 @@ Arithmetic Operators: + ,- , * , %(remainder) , /(quotient) , ++(increment) , --
 
 
 Comparison operators:
+
+>, <, <=, >=, ==, ===, !=, ?:(ternary)
+
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <script>
+
+            var a=10, b=20, c="20", d="10s";
+
+            console.log(a>b);
+            console.log(a<b);
+            console.log(a>=b);
+            console.log(a<=b);
+            console.log(b==c); //always check for content doesnot check for datatype
+            console.log(b===c); //check for both content and datatype also.
+            console.log(a!=c);
+
+            a>b? console.log("a>b") : console.log("a<b")  //if a>b then first statement will run or else 2nd statement will run.
+        </script>
+    </body>
+</html>
+
+
+Logical Opertors:
+
+&& (AND), || (OR), ! (NOT)
+
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <script>
+
+            var a=10, b=20, c=30;
+
+            console.log(a<b && a<c);
+            console.log(a<b && a>c);
+            console.log(a<b || b>c);
+            console.log(a>b || b>c);
+            console.log(!true);
+
+            
+        </script>
+
+            
+    </body>
+</html>
+
+Problem statement: How to accept either email or phonenumber at a time
+
+refer: 7.acceptemailorphonenumber.html
+
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <input type="text" id="mobileoremail" placeholder="enter mobile number or email" size="30"><br><br><br>
+        <input type="text" id="password" placeholder="enter password" size="30"><br><br><br>
+        <button onclick="login()">Login </button>
+
+        <script>
+
+                function login(){
+                    var mobileoremail=document.getElementById("mobileoremail").value;
+                    var password=document.getElementById("password").value;
+
+                    var result = (mobileoremail=="7702349879" || mobileoremail=="digital@lynk.com") && password=="abcde";
+
+                    result ? alert("login success") : alert("login failure");
+
+
+                }
+
+           
+        </script>
+    </body>
+</html>
+

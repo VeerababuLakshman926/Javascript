@@ -1,0 +1,27 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <input type="text" id="mobileoremail" placeholder="enter mobile number or email" size="30"><br><br><br>
+        <input type="text" id="password" placeholder="enter password" size="30"><br><br><br>
+        <button onclick="login()">Login </button>
+
+        <script>
+
+                function login(){
+                    var mobileoremail=document.getElementById("mobileoremail").value;
+                    var password=document.getElementById("password").value;
+
+                    var result = (mobileoremail=="7702349879" || mobileoremail=="digital@lynk.com") && password=="abcde";
+
+                    result ? alert("login success") : alert("login failure");
+
+
+                }
+
+           
+        </script>
+    </body>
+</html>
