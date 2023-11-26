@@ -1,0 +1,190 @@
+finally: 
+
+The finally block is used to execute mandatory statements in the application. 
+
+finally block is followed by try block / catch  block.
+
+try{
+}
+catch(error){
+}
+finally{
+      // mandatory code
+}
+
+throw and Error: 
+
+If we want to create our own error / custom error then we can use Error constructor and 
+
+if we want to throw an error then we can use throw keyword.
+
+<html>
+    <head>
+    </head>
+     <body>
+            <script>
+                function passwordChecker(str){
+                     if(typeof str != "string"){
+                        throw new Error("Invalid Input for Password Checker");
+                     }
+                     else{
+                          
+                          console.log("password is being checked!!");
+                     }
+                }
+                    try{
+                        passwordChecker(13);
+                    }
+                    catch(error){
+                          console.log(error);
+                    }
+                 console.log("line 1");
+                 console.log("line 2");
+         </script>
+     </body>
+</html>
+
+Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors 
+
+Garbage Collection:
+
+Garbage Collection is the process where the runtime engine calls the garbage collector to clean up the 
+unused / dereferenced objects from the memory. 
+
+Runtime engine monitors the memory threshold, once the threshold limit is reached, Runtime engine calls the 
+garbage collector. 
+
+The garbage collector runs mark and sweep algorithm to mark the objects and remove them from the memory.
+
+It is expected that the developers should write garbage collector friendly code. 
+
+example: 
+
+  var obj = {
+                    name:"kiran",
+                    address: "hyderabad"
+                   }
+                   console.log(obj.name);
+                   console.log(obj.address);
+                   obj= null; // nullification 
+
+
+DOM: 
+
+Document Object Model which is used to make html pages dynamic. 
+
+Methods,Documents, Elements: 
+
+Every HTML page is  considered as a document which means a web application is a collection of documents. 
+
+DOM provides a document object to represent html document and provides few functions to operate on the html document. 
+
+Every html element can be identified either by name, id, classname to perform any operation. 
+
+methods: 
+
+<html>
+   <head>
+   </head>
+    <body>
+         <input type="text" id="username">
+          <input type="text" name="email" placeholder="enter email">
+           <button>Login</button>
+           <script>
+           var username = document.getElementById("username");
+            username.placeholder= "username here";
+            username.style.color= "blue";
+             var emailRef = document.getElementsByName("email");
+             console.log(emailRef);
+             emailRef[0].value = "guest@gmail.com";
+             emailRef[0].style.backgroundColor ="red";
+            var buttonRef =  document.getElementsByTagName("button");
+            buttonRef[0].setAttribute('onclick','login()'); 
+             function login(){
+                alert("login called");
+             }
+           </script>
+    </body>
+</html>
+
+Task: Know more about the functions such as querySelector, querySelectorAll....
+
+Events and Event Listener: 
+
+<html>
+   <head>
+   </head>
+    <body>
+                <button>Greetings</button>
+                
+          <script>
+ 
+                  var btn= document.getElementsByTagName("button");
+                  function removeListenerFn(){
+                          btn[0].removeEventListener('click', clickHandler);
+                     }
+
+                  var clickHandler = function(){
+                        alert("Good Morning!");
+                        removeListenerFn();
+                    }
+                   
+                    btn[0].addEventListener('click',clickHandler);
+                    
+                  
+          </script>
+           
+    </body>
+</html>
+
+Navigation: .
+
+<html>
+   <head>
+   </head>
+    <body>
+                <button>Greetings</button>
+            <script>
+ 
+            document.body.firstChild.nextSibling.onclick = function(){
+            alert("abc");
+            }
+            </script>
+           
+    </body>
+</html>
+
+Nodes: 
+
+In DOM, every object is considered as a node which means every html element is a node. 
+
+we can create, update, delete, list all the nodes. 
+
+<html>
+   <head>
+   </head>
+   <body>
+          <script>
+                 var body =  document.getElementsByTagName("body");
+                 var username = document.createElement("input");
+                 username.id = "username";
+                 username.placeholder = "username here";
+                 username.type ="text"; 
+                var password =  document.createElement("input");
+                password.id = "password";
+                password.placeholder = "password here";
+                password.type ="password"; 
+               var button = document.createElement("button");
+                  button.innerText ="Login";
+                  var form = document.createElement("form");
+                  form.appendChild(username);
+                  form.appendChild(password);
+                  form.appendChild(button);
+                  console.log(form);
+                  body[0].appendChild(form);
+                 
+          </script>
+    </body>
+</html>
+
+task: Study collections and nodelists.

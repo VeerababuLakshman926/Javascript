@@ -1,0 +1,36 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+
+                <script>
+
+                    var arr=[1,2,4,1,245,3,0,0,"abc","xyz"];
+
+                    arr.forEach( function(value){
+                        console.log(value);
+                    })
+
+
+                    var result = arr.filter(function(value){
+                        return typeof value == "number";
+                    })
+                    console.log(result);
+
+                    var final = arr.map(function(value){
+                        return value*2; 
+                    })
+                    console.log(final);
+
+                    var finalresult = result.map(function(value){
+                        return value*2; 
+                    })
+                    console.log(finalresult);
+
+
+
+                </script>
+    </body>
+</html>

@@ -1,0 +1,255 @@
+Regular expressions:
+
+Regular expressions are used to create search patterns. 
+
+syntax: 
+   /<pattern>/<modifier>
+   modifiers: 
+   g:  global search 
+   i: case insensitive
+
+Problem Statement: 
+
+Find the occurances of a character in a string.
+
+ hello how are you doing, is Everything Good?
+
+ o is repeated 6 times
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    
+    <script>
+            var str = "hello how are you doing, is Everything GOOd?";
+
+            var pattern = /o/gi;
+            console.log(str.match(pattern).length);
+    </script>
+</body>
+</html>
+
+brackets: 
+
+[abc]: a or b or c 
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+    
+    <script>
+                var str = "hello";
+                var pattern = /e/;
+                var pattern1 = /[abce]/;  //[abce] it implies that in the string hello the letter a or b or c or e will present the ouput is true or else it is false
+                console.log(pattern.test(str));
+                console.log(pattern1.test(str));
+    </script>
+</body>
+</html>
+                  
+[^abc]: not of a or b or c
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+    
+    <script>
+                var str = "hello";
+                var pattern = /[^abce]/;  //[^abce] it implies that in the string hello other than letter a or b or c or e we have anything or not. In hello, we have h,l,l,o. So, it is true
+                var pattern1 = /[^helo]/;    //[^helo] it implies that in the string hello other than letter h or e or l or o we have anything or not. In hello, we have no letters other h,e,l,o. So, it is false
+                console.log(pattern.test(str));
+                console.log(pattern1.test(str));
+    </script>
+</body>
+</html>
+
+                  
+[a-z]: used to specify all the lowercase in pattern 
+
+[A-Z]: used to specify all the uppercase in pattern 
+
+[a-Z]: used to specify uppercase and lower case. 
+
+Meta characters:  These are used to provide some functionality w.r.t characters. 
+
+. (dot): it represents placeholder. 
+
+ var str="hello"; 
+                   var pattern = /h./; //after h we can anything it give true
+                   var pattern1 = /h[.]/;  //after h we should have dot it will give false
+                   console.log(pattern.test(str));
+                   console.log(pattern1.test(str));
+
+\d: for digit:
+
+  var str="h!llo1"; 
+                   var pattern = /\d/; //In str whether there is digit or not , it will give true
+                   console.log(pattern.test(str)); 
+
+\D: non digit
+
+ var str="A1"; 
+                   var pattern = /\D/; //In str whether there is anything other than digit it will give true and if str contains only digits it will give false.
+                   console.log(pattern.test(str)); 
+
+\s: to check for a white space. 
+
+ var str="A 1"; 
+                   var pattern = /\s/; //checks whether space exist in the str
+                   console.log(pattern.test(str));
+
+                  
+Quantifiers: 
+
+n+:  If we want n to be available atleast once then we can use + quantifier
+
+ var str="Aksbdfvkbsvksvkjsdv0A"; 
+                   var pattern = /[A-Z][a-z]+[0-9][A-Z]+/;  //condition is first letter will be captial from A to Z and we should have atleast one small letter after that one numeric digit and after that atleast one capital letter.
+                   console.log(pattern.test(str));
+ 
+ var str="A-"; 
+                   var pattern = /[A-Z]+[@#$%]+/;  //condition is we have atleast one capital letter and after that we can have atleast  one of the any special character specified @#$%.
+                   var pattern1 = /[A-Z]+\W+/;  // \w means all words and \W means negation of words i.e., all special characters.condition is we have atleast one capital letter and after that we can have atleast one of the any special character.
+                   console.log(pattern.test(str));  
+                  console.log(pattern1.test(str)); 
+
+* :  zero or more occurances  
+
+ var str="A12345677887777a";
+                   var pattern = /[A-Z][0-9]*[a-z]/;  //condition is first one is capital letter and after that we may have number of digits or not and after that small letter should be there.
+                   console.log(pattern.test(str));
+
+?: zero or only one occurance 
+
+ var str="A19a"; 
+                   var pattern = /[A-Z][0-9]?[a-z]/; //condition is first one is capital letter and after that we may have one digit or not and after that small letter should be there.
+                   console.log(pattern.test(str)); 
+
+Problem Statement of password checking:
+
+<html>
+    <head>
+    </head>
+    
+      <input type="text" id="username" onkeyup="checkForUsernames()" placeholder="username here">
+      <span id="msg1"></span>
+      <input type="text" id="password" onkeyup="passwordCheck()" placeholder="password here">
+      <span id="msg2"></span>
+    <script>
+     
+     var msg1 = document.getElementById("msg1");
+     var msg2 = document.getElementById("msg2");
+          function checkForUsernames(){
+                     var usernames= ["john","mike","divi","ravi"];
+                    var username = document.getElementById("username").value;
+                     if(usernames.includes(username)){
+                          msg1.style.color ="red"; 
+                          msg1.innerText = "Username Already Taken!!"
+                     }
+                     else{
+                        msg1.style.color ="green"; 
+                          msg1.innerText = "Username Available!!"
+                     }
+          }
+          // atleast 8 chars, 1 uppercase, 1 lowercase, 1 digit, 1 special char
+          function passwordCheck(){
+            
+            var password =  document.getElementById("password").value;
+              if(password.length < 8){
+                   msg2.style.color = "red"; 
+                   msg2.innerText = "Password should be atleast 8 characters"
+                   return;
+              }
+              else{
+                msg2.style.color = ""; 
+                   msg2.innerText = ""
+              }
+            //  var upperCaseResult =  checkForUpperCase(password);
+            
+            var upperCaseResult = /[A-Z]+/g.test(password);
+              if(upperCaseResult){
+                
+              }
+              else{
+                msg2.style.color = "red"; 
+                   msg2.innerText = "Password should have atleast 1 upper case"
+                   return;
+              }
+              var lowerCaseResult =  /[a-z]+/g.test(password);
+                if(lowerCaseResult){
+                
+                }
+                else{
+                msg2.style.color = "red"; 
+                    msg2.innerText = "Password should have atleast 1 lower case";
+                    return;
+                }
+                var digitResult =  /[0-9]+/g.test(password);
+                console.log("digitResult", digitResult)
+                if(digitResult){
+                    console.log("inside digitResult  true");
+                }
+                else{
+                      console.log("inside digitResult  false");
+                    msg2.style.color = "red"; 
+                    msg2.innerText = "Password should have atleast 1 digit";
+                    return;
+                }
+                var specialCharsResult =  /\W+/g.test(password);
+                if(specialCharsResult){
+                    
+                }
+                else{
+                      
+                    msg2.style.color = "red"; 
+                    msg2.innerText = "Password should have atleast SPECIAL char";
+                    return;
+                }
+          }
+   
+            
+    </script>
+</html>
+
+Error Handling: 
+
+Whenever an error occurs, the application crashes down. To avoid the crashing of 
+the application, we need to perform error handling.
+ 
+<html>
+    <head>
+    </head>
+    <script>
+     
+               
+                     var user=null;
+                      function fetchUserDetails(){
+                            //    user= {
+                            //        name:"ravi"
+                            //    }
+                      }
+                      fetchUserDetails();
+                var a=100; 
+                console.log(a); 
+                          try{
+                            console.log(user.name);
+                          }
+                          catch(error){
+                                console.log(error);
+                          }
+                       
+                  
+                var arr= [1,2,3,4,5]; 
+                console.log(arr);
+            
+    </script>
+</html>

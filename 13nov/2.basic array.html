@@ -1,0 +1,27 @@
+<html>
+    <head>
+
+
+    </head>
+    <body>
+
+        <script>
+
+            var arr=[];
+            arr.push(10); //elements add at the end
+            arr.push(20);
+            arr.push(30);
+            arr.unshift(5); //element will add at first
+            var index = arr.indexOf(10);
+            arr.splice(index,0,7); //7 is element to add at index of 10 and 0 refers no deletion of element 10
+            arr.pop();  //last element will delete
+            arr.shift(); //first element is deleted
+            var index1 = arr.indexOf(10);
+            arr.splice(index1) //from index1 one delete elements and if dont specify the number elements to be delete, then it will delete all the array
+
+            console.log(arr);
+
+
+        </script>
+    </body>
+</html>

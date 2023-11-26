@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+    
+    <script>
+                var str = "hello";
+                var pattern = /[^abce]/;  //[^abce] it implies that in the string hello other than letter a or b or c or e we have anything or not. In hello, we have h,l,l,o. So, it is true
+                var pattern1 = /[^helo]/;    //[^helo] it implies that in the string hello other than letter h or e or l or o we have anything or not. In hello, we have no letters other h,e,l,o. So, it is false
+                console.log(pattern.test(str));
+                console.log(pattern1.test(str));
+    </script>
+</body>
+</html>

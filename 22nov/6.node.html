@@ -1,0 +1,26 @@
+<html>
+   <head>
+   </head>
+   <body>
+          <script>
+                 var body =  document.getElementsByTagName("body");
+                 var username = document.createElement("input");
+                 username.id = "username";
+                 username.placeholder = "username here";
+                 username.type ="text"; 
+                var password =  document.createElement("input");
+                password.id = "password";
+                password.placeholder = "password here";
+                password.type ="password"; 
+               var button = document.createElement("button");
+                  button.innerText ="Login";
+                  var form = document.createElement("form");
+                  form.appendChild(username);
+                  form.appendChild(password);
+                  form.appendChild(button);
+                  console.log(form);
+                  body[0].appendChild(form);
+                 
+          </script>
+    </body>
+</html>

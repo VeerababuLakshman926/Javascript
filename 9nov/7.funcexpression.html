@@ -1,0 +1,26 @@
+<html>
+    <head>
+    </head>
+     <body>
+         <script>
+                  function f1(a){
+                      a();
+                  }
+                  function f2(b){
+                         b();
+                  }
+                  function f3(c){
+                         c();
+                  }
+                   var callbackFn = function(){ // Function Expression
+                    console.log("callback function ");
+                  }
+                  f1(callbackFn);
+                  f2(callbackFn);
+                  
+                  f3(callbackFn);
+                  callbackFn = null; //memory will be saved
+                //   f3(callbackFn);
+         </script>
+     </body>
+</html>

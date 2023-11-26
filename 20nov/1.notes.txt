@@ -1,0 +1,130 @@
+Validations: 
+There are 2 types of validations:
+1. basic validations : javscript logic
+2. advanced validations: regular expressions 
+<html>
+    <head>
+    </head>
+    
+      <input type="text" id="username" onkeyup="checkForUsernames()" placeholder="username here">
+      <span id="msg1"></span>
+      <input type="text" id="password" onkeyup="passwordCheck()" placeholder="password here">
+      <span id="msg2"></span>
+    <script>
+     
+     var msg1 = document.getElementById("msg1");
+     var msg2 = document.getElementById("msg2");
+          function checkForUsernames(){
+                     var usernames= ["john","mike","divi","ravi"];
+                    var username = document.getElementById("username").value;
+                     if(usernames.includes(username)){
+                          msg1.style.color ="red"; 
+                          msg1.innerText = "Username Already Taken!!"
+                     }
+                     else{
+                        msg1.style.color ="green"; 
+                          msg1.innerText = "Username Available!!"
+                     }
+          }
+          function passwordCheck(){
+            
+            var password =  document.getElementById("password").value;
+              if(password.length < 8){
+                   msg2.style.color = "red"; 
+                   msg2.innerText = "Password should be atleast 8 characters"
+                   return;
+              }
+              else{
+                msg2.style.color = ""; 
+                   msg2.innerText = ""
+              }
+             var upperCaseResult =  checkForUpperCase(password);
+              if(upperCaseResult){
+                
+              }
+              else{
+                msg2.style.color = "red"; 
+                   msg2.innerText = "Password should have atleast 1 upper case"
+                   return;
+              }
+              var lowerCaseResult =  checkForLowerCase(password);
+                if(lowerCaseResult){
+                
+                }
+                else{
+                msg2.style.color = "red"; 
+                    msg2.innerText = "Password should have atleast 1 lower case";
+                    return;
+                }
+                var digitResult =  checkForDigit(password);
+                console.log("digitResult", digitResult)
+                if(digitResult){
+                    console.log("inside digitResult  true");
+                }
+                else{
+                      console.log("inside digitResult  false");
+                    msg2.style.color = "red"; 
+                    msg2.innerText = "Password should have atleast 1 digit";
+                    return;
+                }
+                var specialCharsResult =  checkForSpecialChars(password);
+                if(specialCharsResult){
+                    
+                }
+                else{
+                      
+                    msg2.style.color = "red"; 
+                    msg2.innerText = "Password should have atleast SPECIAL char";
+                    return;
+                }
+          }
+           function checkForUpperCase(str){
+               if(str.length > 0){
+                   for(var i=0;i<str.length;i++){
+                          if(str[i] ==  str[i].toUpperCase()){
+                                 return true;    
+                          }
+                   }
+                   return false;   
+               }
+           }
+           function checkForLowerCase(str){
+               if(str.length > 0){
+                   for(var i=0;i<str.length;i++){
+                          if(str[i] ==  str[i].toLowerCase()){
+                                 return true;    
+                          }
+                   }
+                   return false;   
+               }
+           }
+            function checkForDigit(str){
+                console.log("I am called");
+                 var digits= ["0","1","2","3","4","5","6","7","8","9"];
+                 if(str.length > 0){
+                   for(var i=0;i<str.length;i++){
+                    console.log( str[i],digits.includes(str[i]))
+                          if(digits.includes(str[i])){
+                            console.log("I am here");
+                                 return true;    
+                          }
+                   }
+                   return false;   
+               }
+            }
+            function checkForSpecialChars(str){
+                 var characters= ["!","@","#","$","%","^","&","*","(",")"];
+                 if(str.length > 0){
+                   for(var i=0;i<str.length;i++){
+                   
+                          if(characters.includes(str[i])){
+                            
+                                 return true;    
+                          }
+                   }
+                   return false;   
+               }
+            }
+    </script>
+</html>
+Ref: https://www.w3schools.com/jsref/jsref_obj_regexp.asp

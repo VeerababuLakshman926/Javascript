@@ -1,0 +1,47 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <ul id="product" style="list-style-type: none;">
+
+        </ul>
+        
+                <script>
+
+                        var products = [
+                        {
+                            imageURL: "https://rukminim2.flixcart.com/image/612/612/xif0q/milk-drink-mix/a/1/q/-original-imagtt7zsqjw4anh.jpeg?q=70",
+                            name: "COMPLAN Nutrition and Health Drink Royale Chocolate-Refill  (1 kg)" , 
+                            redirectionURL : "https://www.flipkart.com/complan-nutrition-health-drink-royale-chocolate-refill/p/itmdefc67a02e100?pid=MDMETGN5CBVNBSGT&lid=LSTMDMETGN5CBVNBSGTV8WMW3&marketplace=FLIPKART&q=&store=search.flipkart.com&srno=s_1_1&otracker=search&otracker1=search&fm=Search&iid=en_h4hb6ZeU8ijnBh2MVD8vf7hAFRRumFHFJA67shYEWKDGupV7_H68Lp34h7Gav4dcy7BToCpWei5q5xDSTiV53w%3D%3D&ppt=browse&ppn=browse&ssid=knvd32y0r40000001699939898726"
+                        },
+                        {
+                            imageURL: "https://rukminim2.flixcart.com/image/612/612/xif0q/fk-learning/i/l/5/-original-imaguw228cfxxaed.jpeg?q=70",
+                            name: "General Knowlegde 2024 (45) | Ebook | Available on Android only by Manohar Pandey 2023  (Others)" , 
+                            redirectionURL : "https://www.flipkart.com/general-knowlegde-2024-45-ebook-available-android-only-manohar-pandey-2023/p/itm22ef90f6a4363?pid=FKLGQSFKHHRKP8UV&lid=LSTFKLGQSFKHHRKP8UVUBAPOP&marketplace=FLIPKART&q=&store=search.flipkart.com&spotlightTagId=BestsellerId_search.flipkart.com&srno=s_1_5&otracker=search&otracker1=search&fm=Search&iid=5701846d-0f7c-40c3-ace7-f601c6468fe5.FKLGQSFKHHRKP8UV.SEARCH&ppt=browse&ppn=browse"
+                        },
+                        {
+                            imageURL: "https://rukminim2.flixcart.com/image/416/416/kt7jv680/milk-drink-mix/a/x/5/regular-malt-flavour-flavour-plastic-bottle-lite-horlicks-original-imag6hyejvz9pewz.jpeg?q=70",
+                            name: "Lite Horlicks Regular Malt Flavour  (450 g)" , 
+                            redirectionURL : "https://www.flipkart.com/lite-horlicks-regular-malt-flavour/p/itmf2824dc09bb4d?pid=MDMETGN5DFK4QXSQ&lid=LSTMDMETGN5DFK4QXSQF933HI&marketplace=FLIPKART&q=&store=search.flipkart.com&srno=s_1_13&otracker=search&otracker1=search&fm=Search&iid=5701846d-0f7c-40c3-ace7-f601c6468fe5.MDMETGN5DFK4QXSQ.SEARCH&ppt=browse&ppn=browse"
+                        }
+                    ]
+                    console.log(products.length);
+                    var listItems = "";
+
+                    for (var i=0; i<products.length; i++){
+                        var product = products[i];
+
+                        listItems = listItems + "<li>"+"<img height='120px' width='100px' src="+product.imageURL+">"+"<h4>"+product.name.link(product.redirectionURL)+"</h4>"+"</li>";
+                    }
+
+                    document.getElementById("product").innerHTML = listItems;
+                    var elements = document.getElementsByTagName("a");
+                     for(var i=0; i<elements.length; i++){
+                         elements[i].setAttribute("target", "_blank")
+                     }
+
+
+                </script>
+    </body>
+</html>

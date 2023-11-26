@@ -1,0 +1,178 @@
+Objects: 
+
+syntax: 
+
+var obj_name = {
+
+    key : value, 
+    key: value
+}
+
+Object methods / functions: 
+
+create: used to create a new object from the existing object. 
+
+var bank = {
+                   bankName: "ICICI", 
+                   branch: "Madhapur"
+               }
+               var customer = Object.create(bank);
+                 customer.name ="Raj Kumar"; 
+                 customer.cid= 10234;
+               console.log(customer);
+               console.log(customer.bankName);
+               console.log(customer.branch);
+               console.log(customer);
+               console.log(bank.cid);
+
+keys and values: 
+
+  var user = {
+                     username: "Kiran", 
+                     address: "Hyderabad", 
+                     firstName: "Kiran", 
+                     lastName: "Kumar", 
+                     email: "kiran@gmail.com", 
+                     mobile: 9090909090
+               }
+              var user_keys= Object.keys(user);
+              console.log(user_keys);
+               var user_values= Object.values(user);
+               console.log(user_values);
+
+
+Problem Statement: 
+
+Create a dynamic table based on the following array of objects. 
+
+var users = [
+    {
+        name: "kiran", 
+        address: "hyderabad", 
+        age: 31
+    },
+      {
+        name: "rajesh", 
+        address: "banglore", 
+        age: 21
+    } ,
+    {
+        name: "naveen", 
+        address: "chennai", 
+        age: 45
+    }
+]
+
+
+solution:
+
+<html>
+    <head>
+
+         <style>
+
+              tr{
+                text-align: center;
+              }
+
+         </style>
+
+    </head>
+
+     <body>
+
+        <table border="1" width="100%">
+
+             <thead id="thead">
+
+             </thead>
+
+             <tbody id="tbody">
+
+             </tbody>
+
+        </table>
+
+         <script>
+
+var users = [
+    {
+        name: "kiran", 
+        address: "hyderabad", 
+        age: 31, 
+        mobile:9090909090
+    },
+      {
+        name: "rajesh", 
+        address: "banglore", 
+        age: 21,
+        mobile:9090909077
+    } ,
+    {
+        name: "naveen", 
+        address: "chennai", 
+        age: 45,
+        mobile:9790909090
+    }, 
+    {
+        name: "Ravi", 
+        address: "banglore", 
+        age: 40,
+        mobile:900909090
+    }
+]
+
+      var user = users[0];
+     var keys =  Object.keys(user);
+     console.log(keys);
+      var theadItems = "";
+      keys.forEach(function(key){
+        theadItems = theadItems+ "<th>" +key +"</th>"
+      })
+      console.log(theadItems);
+      document.getElementById("thead").innerHTML = theadItems;
+
+        var rows= "";
+      users.forEach(function(user) {
+           var values = Object.values(user);
+           var row = "<tr>";
+            values.forEach(function(value){
+                     row += "<td>"+ value +"</td>"
+            })
+            row = row + "</tr>";
+            rows = rows +  row;
+      })
+      console.log(rows);
+       document.getElementById("tbody").innerHTML = rows;
+                  
+         </script>
+
+     </body>
+</html>
+
+freeze: 
+
+  var config = Object.freeze({
+                     port: 9011, 
+                     ip: "128.11.12.123", 
+                     username: "admin", 
+                     password: "admin"
+                });
+                 config.port = 9111;
+                 config.subnet= "sdbkjsdv";
+                console.log(config);
+                console.log(Object.isFrozen(config));
+
+                var abc = {}; 
+                console.log(Object.isFrozen(abc));
+
+function constructor: 
+
+If we have a similar object to be created, then we can create the blueprint of it and 
+then create multiple objects out of it. 
+
+syntax: 
+
+ function FunctionName(){
+    
+ }

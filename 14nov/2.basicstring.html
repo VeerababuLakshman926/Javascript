@@ -1,0 +1,27 @@
+<html>
+    <head>
+    </head>
+     <body>
+         <div id="abc">
+         </div>
+         <script>
+                var str= "hello"; 
+                var ster= "hello how"
+                console.log(str);
+                console.log(str.charAt(2)); //output= l
+                console.log(str.bold()); //it will not convert it into bold but it is going to add that as a html content and wrap that with html output= <b>hello</b> 
+                console.log(str.blink()); //output similar to bold output:<blink>hello</blink>   
+                console.log(str.link("http://www.facebook.com"));  //it will create an anchor tag output::<a href="www.facebook.com">hello</a>
+                //document.getElementById("abc").innerHTML =  str.link("http://www.facebook.com");
+                console.log(str.toUpperCase());
+                console.log(str.toLocaleLowerCase());
+                console.log(str.split("")); //output: ["h" "e" "l" "l" "o" ] lenght=5
+                console.log(ster.split(""));  //output: ["h" "e" "l" "l" "o" " " "h" "o" "w" ] lenght=9
+                console.log(ster.split(" "));  //output: ["hello" "how"] length=2 because it will consider it as one element upto the space
+                console.log(str.includes(" ")); //checks for space is included. If space is not there it will give false.
+                console.log(str.indexOf("l")); //2
+                console.log(str.lastIndexOf("l")); //3
+                console.log(str.replace("hello", "abc"));
+         </script>
+     </body>
+</html>

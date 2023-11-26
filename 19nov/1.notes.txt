@@ -1,0 +1,143 @@
+this keyword: 
+this keyword is used to represent the current object. 
+Any object that is in execution will be represented using this keyword. 
+<html>
+    <head>
+    </head>
+     <body>
+         <script>
+                 function User(username, password,email){
+                    this.username = username; 
+                    this.password = password;
+                    this.email = email;
+                 }
+                 var user1 = new User("kiran","pass123","kiran@gmail.com"); 
+                 console.log(user1);
+                 var user2 = new User("ram","134pass123","ramkiran@gmail.com"); 
+                 console.log(user2);
+         </script>
+     </body>
+</html>
+Scopes: 
+According to Javascript, we have two types of scopes. 
+1. Local Scope : Local variables will be stored in local scope.
+2. Global Scope : Global variables will be stored in global scope. 
+<html>
+    <head>
+    </head>
+     <body>
+         <script>
+                      var a=100;
+                      var b=200; 
+                       function f1(){
+                            var c=90;
+                            var d=800;
+                            
+                            console.log(c);
+                            console.log(d);
+                       }
+                       f1();
+                       console.log(a);
+                       console.log(b);
+         </script>
+     </body>
+</html>
+Events: 
+onclick: 
+<html>
+    <head>
+    </head>
+     <body>
+         <button onclick="greet()">Greetings</button>
+         <script>
+             function greet(){
+                 alert("Good Morning!!");
+             }
+         </script>
+     </body>
+</html>
+onclick -> event 
+greet() -> event handler
+Problem Statement: 
+restrict pasting content on the text field. 
+<html>
+    <head>
+    </head>
+     <body>
+           <input type="text" onpaste="return onPasteHandler()" placeholder="enter account number">
+           <span id="message"></span>
+                    
+             <script>
+                    function onPasteHandler(){
+                       document.getElementById("message").innerText ="You cannot paste";
+                         return false;
+                    }
+             </script>
+     </body>
+</html>
+Problem Statement: 
+Create a web page, have some textual content in it. when user tries to copy the 
+content, restrict the user fro, copying and provide one alert("copying is disabled")
+<html>
+    <head>
+    </head>
+     <body oncopy="return onCopyHandler()">
+         <p>
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+         </p>
+             <script>
+                    function onCopyHandler(){
+                      alert("you cannot copy the content!!");
+                         return false;
+                    }
+             </script>
+     </body>
+</html>
+Problem Statement: 
+Restrict the user from right clicking on the page.
+<html>
+    <head>
+    </head>
+     <body oncontextmenu="return onConextMenuHandler()">
+         <p>
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+            This is some paragraph!!!
+         </p>
+             <script>
+                    function onConextMenuHandler(){
+                      alert("you cannot right click");
+                         return false;
+                    }
+             </script>
+     </body>
+</html>
+Ref: https://www.w3schools.com/jsref/dom_obj_event.asp

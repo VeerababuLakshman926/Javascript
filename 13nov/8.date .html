@@ -1,0 +1,23 @@
+<html>
+    <head></head>
+    <body>
+        
+
+        <script>
+                     function getTimeStamp(){
+                         var date = new Date();
+                         var t=  concatZero(date.getHours()) +":"+concatZero(date.getMinutes())+":"+ concatZero(date.getSeconds());
+                         var d = (date.getMonth()+1) +"/"+ date.getDate()+"/"+ date.getFullYear(); 
+                         return t + "    " + d;
+                     }
+                      console.log(getTimeStamp());
+                       
+                      function concatZero(input){
+                         if(input <= 9){
+                                         return '0'+input;
+                         }
+                         return input;
+                      }
+        </script>
+    </body>
+</html>

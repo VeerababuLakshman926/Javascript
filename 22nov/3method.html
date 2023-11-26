@@ -1,0 +1,23 @@
+<html>
+   <head>
+   </head>
+    <body>
+         <input type="text" id="username">
+          <input type="text" name="email" placeholder="enter email">
+           <button>Login</button>
+           <script>
+           var username = document.getElementById("username");
+            username.placeholder= "username here";
+            username.style.color= "blue";
+             var emailRef = document.getElementsByName("email");
+             console.log(emailRef);
+             emailRef[0].value = "guest@gmail.com";
+             emailRef[0].style.backgroundColor ="red";
+            var buttonRef =  document.getElementsByTagName("button");
+            buttonRef[0].setAttribute('onclick','login()'); 
+             function login(){
+                alert("login called");
+             }
+           </script>
+    </body>
+</html>
