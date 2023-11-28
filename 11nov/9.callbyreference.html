@@ -1,0 +1,18 @@
+<html>
+    <head>
+    </head>
+     <body>
+          <script>
+                      var x= [10,20,30]
+                      function f1(a){
+                            a.push(40);
+                            a.push(50);
+                      }
+                      f1(x); //call by reference for variable a the address of x is passed. After that the addresses for global variable x and local variable a are same  
+                      console.log(x.length); // 5
+                      x.push(60);
+                      console.log(x);
+                      console.log(x.length);
+          </script>
+     </body>
+</html>

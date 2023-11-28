@@ -1,7 +1,10 @@
 First class functions: 
+
 If a function can be stored in a variable, can be passed as an argument and can be 
 returned from another function then it is known as first class functions. 
+
 All the functions we create in JS are first class functions. 
+
 <html>
     <head>
     </head>
@@ -18,8 +21,11 @@ All the functions we create in JS are first class functions.
           </script>
      </body>
 </html>
+
 IIFE: Immediately Invoked Function Expression 
+
 If we want a function to be invoked (called) automatically then we create IIFEs.
+
 <html>
     <head>
     </head>
@@ -32,11 +38,17 @@ If we want a function to be invoked (called) automatically then we create IIFEs.
           </script>
      </body>
 </html>
+
+
 Real time use case:  whenever we want to load the initial data in the page, then we can 
 write that logic inside the IIFE function. 
-We can have any number of IIFE functions. 
+
+We can have any number of IIFE functions.
+
 Call, Apply and Bind (Self Learn): 
+
 call() is used to call other object's functions by substituting another object. 
+
 <html>
     <head>
     </head>
@@ -61,10 +73,14 @@ call() is used to call other object's functions by substituting another object.
           </script>
      </body>
 </html>
+
 apply: 
 The apply function is same as call function with a small difference. 
+
 In call function, we need to split the array of values if we need to pass then as arguments. 
+
 In apply function, splitting is automatically taken care. 
+
 <html>
     <head>
     </head>
@@ -91,8 +107,15 @@ In apply function, splitting is automatically taken care.
           </script>
      </body>
 </html>
+
+bind: selflearn
+
+
+
 Closures:
-A closure is a nested function which is used to privatize the functions in Javascript. 
+
+A closure is a nested function which is used to privatize the functions in Javascript.
+
 <html>
     <head>
     </head>
@@ -124,8 +147,10 @@ A closure is a nested function which is used to privatize the functions in Javas
           </script>
      </body>
 </html>
+
 A closure is a scope that can be used to access the outer function variables in the 
 inner function. 
+
 <html>
     <head>
     </head>
@@ -161,7 +186,9 @@ inner function.
           </script>
      </body>
 </html>
-Call by Value: 
+
+Call by Value:
+
 <html>
     <head>
     </head>
@@ -177,10 +204,14 @@ Call by Value:
           </script>
      </body>
 </html>
+
 Call by Reference: 
+
 It gets applied on non primitive types - arrays and objects
+
 While we call a function by passing a non -primitive type, we are actually passing 
 the reference (address) of the variable.
+
 <html>
     <head>
     </head>
@@ -191,8 +222,12 @@ the reference (address) of the variable.
                             a.push(40);
                             a.push(50);
                       }
-                      f1(x); //   call by reference
-                      console.log(x.length); // ?
+                      f1(x); //call by reference for variable a the address of x is passed. After that the addresses for global variable x and local variable a are same  
+                      console.log(x.length);
+                      console.log(x); // 5
+                      x.push(60);            
+                      console.log(x.length); //6
+                      console.log(x);
           </script>
      </body>
 </html>
